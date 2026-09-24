@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#101b2b" />
     <title>Oseoverse · prueba PC, celular y Quest</title>
-    <script type="module" crossorigin src="./assets/index-jcT28KYe.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-9N1SKcfq.css">
+    <script type="module" crossorigin src="./assets/index-C7AeOpQb.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BCqX3iaQ.css">
   </head>
   <body>
     <div id="app"></div>
     <div id="hud">
       <div class="title">OSEOVERSE <span>Prueba de dispositivos</span></div>
       <div id="instructions">PC: WASD, ratón y clic · Celular: mover, mirar y tocar · Quest: entrar en VR y usar el gatillo</div>
-      <div id="status" aria-live="polite">Acércate al cubo amarillo del stand y actívalo.</div>
-      <div id="score">Interacciones: <strong>0</strong></div>
+      <div id="status" aria-live="polite">Explora el stand Proconvet y responde en el panel.</div>
+      <button id="go-stand" type="button">Ir al stand Proconvet</button>
+      <div id="score">Cubo compartido: <strong>0</strong> activaciones locales</div>
     </div>
+    <section id="quiz-card" aria-label="Preguntas de Proconvet" hidden>
+      <div class="quiz-heading">PROCONVET <span id="quiz-progress"></span></div>
+      <p id="quiz-question"></p>
+      <div id="quiz-choices">
+        <button type="button"></button>
+        <button type="button"></button>
+        <button type="button"></button>
+      </div>
+      <p id="quiz-feedback" aria-live="polite"></p>
+    </section>
     <div id="room-panel">
       <div id="room-title">Sala multijugador <span id="people-count">1 persona</span></div>
       <div id="room-controls">
