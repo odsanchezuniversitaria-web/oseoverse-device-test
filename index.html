@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-BLhQg0VJ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CoQaDcYs.css">
+  <script type="module" crossorigin src="./assets/index-B_h4AkIk.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DXVsHLsK.css">
 </head>
 <body>
   <div id="app"></div>
   <header id="topbar">
     <div class="brand">OSEOVERSE <small id="quiz-progress">0/3 · 0 pts</small></div>
-    <nav aria-label="Visitar zonas"><button id="go-stand">Preguntas</button><button id="go-objects">Objetos</button></nav>
+    <nav aria-label="Visitar zonas"><button id="go-stand">Preguntas</button><button id="go-objects">Objetos</button><button id="go-characters">Avatar</button></nav>
     <details id="menu">
       <summary aria-label="Abrir menú">☰ <span id="people-count">1</span></summary>
       <div id="menu-content">
@@ -41,6 +41,12 @@
   <div id="status" role="status" aria-live="polite">Cargando tus stands…</div>
   <section id="welcome" role="status" aria-live="polite" hidden><small>BIENVENIDO A LA SALA</small><strong id="welcome-room"></strong><span>Explora · participa · comparte</span></section>
   <div id="reticle" aria-hidden="true">·</div>
+  <section id="character-picker" aria-label="Escoge tu personaje" hidden>
+    <button id="close-characters" aria-label="Cerrar selector de personajes">×</button>
+    <strong>Escoge tu personaje</strong><p>Bata blanca · equipo veterinario</p>
+    <div><button data-character="cat" aria-pressed="false">Gato veterinario</button><button data-character="dog" aria-pressed="false">Perro veterinario</button></div>
+    <small>Tu elección: <span id="selected-character"></span></small>
+  </section>
   <section id="object-tools" aria-label="Objeto en la mano" hidden>
     <div><b id="held-name"></b> <output id="held-scale">1.00×</output></div>
     <div class="tool-buttons">
