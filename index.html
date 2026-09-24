@@ -1,46 +1,55 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#101b2b" />
-    <title>Oseoverse · prueba PC, celular y Quest</title>
-    <script type="module" crossorigin src="./assets/index-C7AeOpQb.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BCqX3iaQ.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <div id="hud">
-      <div class="title">OSEOVERSE <span>Prueba de dispositivos</span></div>
-      <div id="instructions">PC: WASD, ratón y clic · Celular: mover, mirar y tocar · Quest: entrar en VR y usar el gatillo</div>
-      <div id="status" aria-live="polite">Explora el stand Proconvet y responde en el panel.</div>
-      <button id="go-stand" type="button">Ir al stand Proconvet</button>
-      <div id="score">Cubo compartido: <strong>0</strong> activaciones locales</div>
-    </div>
-    <section id="quiz-card" aria-label="Preguntas de Proconvet" hidden>
-      <div class="quiz-heading">PROCONVET <span id="quiz-progress"></span></div>
-      <p id="quiz-question"></p>
-      <div id="quiz-choices">
-        <button type="button"></button>
-        <button type="button"></button>
-        <button type="button"></button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#173747" />
+  <title>Oseoverse · stands e interacción</title>
+  <script type="module" crossorigin src="./assets/index-Db8Wz5fU.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D6smKXJl.css">
+</head>
+<body>
+  <div id="app"></div>
+  <header id="topbar">
+    <div class="brand">OSEOVERSE <small id="quiz-progress">0/3 · 0 pts</small></div>
+    <nav aria-label="Visitar zonas"><button id="go-stand">Preguntas</button><button id="go-objects">Objetos</button></nav>
+    <details id="menu">
+      <summary aria-label="Abrir menú">☰ <span id="people-count">1</span></summary>
+      <div id="menu-content">
+        <strong>Sala multijugador</strong>
+        <div id="room-controls">
+          <input id="player-name" aria-label="Tu nombre" maxlength="18" placeholder="Tu nombre" autocomplete="nickname" />
+          <input id="room-code" aria-label="Código de sala" maxlength="8" placeholder="Código de sala" autocomplete="off" />
+          <button id="join-room">Entrar</button><button id="create-room">Crear sala</button>
+        </div>
+        <p id="room-message">Crea una sala y comparte el enlace.</p>
+        <button id="copy-link" hidden>Copiar enlace</button>
+        <hr />
+        <button id="go-second">Visitar segundo stand</button>
+        <button id="lock-pointer">Capturar ratón (PC)</button>
+        <p><b>PC:</b> WASD para moverte, arrastra para mirar. Clic para responder o tomar; E para tomar/soltar. R gira y la rueda cambia el tamaño.</p>
+        <p><b>Celular:</b> joystick para caminar, arrastra para mirar, toca el objeto. Usa +/− o pellizca con dos dedos para cambiar tamaño.</p>
+        <p><b>Quest:</b> joystick izquierdo para caminar. Gatillo para tomar/soltar o responder. Con un objeto, joystick derecho vertical cambia tamaño y horizontal gira. También puedes sujetarlo manteniendo el botón de agarre.</p>
+        <small id="load-state">Cargando stands…</small>
+        <small>Los puntos son de prueba y se reinician al recargar.</small>
       </div>
-      <p id="quiz-feedback" aria-live="polite"></p>
-    </section>
-    <div id="room-panel">
-      <div id="room-title">Sala multijugador <span id="people-count">1 persona</span></div>
-      <div id="room-controls">
-        <input id="player-name" aria-label="Tu nombre" maxlength="18" placeholder="Tu nombre" autocomplete="nickname" />
-        <input id="room-code" aria-label="Código de sala" maxlength="8" placeholder="Código de sala" autocomplete="off" />
-        <button id="join-room" type="button">Entrar</button>
-        <button id="create-room" type="button">Crear sala</button>
-      </div>
-      <div id="room-message" aria-live="polite">Crea una sala y comparte el enlace para probar con otra persona.</div>
-      <button id="copy-link" type="button" hidden>Copiar enlace</button>
+    </details>
+  </header>
+  <div id="status" role="status" aria-live="polite">Cargando tus stands…</div>
+  <div id="reticle" aria-hidden="true">·</div>
+  <section id="object-tools" aria-label="Objeto en la mano" hidden>
+    <div><b id="held-name"></b> <output id="held-scale">1.00×</output></div>
+    <div class="tool-buttons">
+      <button id="scale-down" aria-label="Reducir objeto">−</button>
+      <button id="scale-up" aria-label="Aumentar objeto">+</button>
+      <button id="rotate-object">Girar</button>
+      <button id="reset-object">Devolver</button>
+      <button id="release-object">Soltar</button>
     </div>
-    <div id="mobile-ui">
-      <div id="move-pad"><div id="move-knob"></div></div>
-      <button id="interact" type="button">ACTIVAR</button>
-    </div>
-  </body>
+  </section>
+  <div id="mobile-ui">
+    <div id="move-pad" aria-label="Joystick de movimiento"><div id="move-knob"></div></div>
+    <button id="interact">Agarrar</button>
+  </div>
+</body>
 </html>
