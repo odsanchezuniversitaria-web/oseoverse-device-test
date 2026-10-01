@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-BTxXuQ2z.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-FOlVCwUT.css">
+  <script type="module" crossorigin src="./assets/index-PT-1c59o.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C8VmrEr7.css">
 </head>
 <body class="entry-required">
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
@@ -24,8 +24,20 @@
   </section>
   <div id="app"></div>
   <header id="topbar">
+    <details id="destinations">
+      <summary aria-label="Abrir destinos">☰ <span>Explorar</span></summary>
+      <nav id="destinations-content" aria-label="Visitar zonas">
+        <strong>¿A dónde quieres ir?</strong>
+        <button id="go-conference">Auditorio <small>Conversaciones y presentaciones</small></button>
+        <button id="go-basket">Canasta <small>Nutrición en juego</small></button>
+        <button id="go-memory">Memoria <small>Encuentra las parejas</small></button>
+        <button id="go-target-game">Tiro VET <small>Protege a las mascotas</small></button>
+        <button id="go-stand">Preguntas <small>Aprende y suma puntos</small></button>
+        <button id="go-objects">Objetos <small>Toma, gira y cambia el tamaño</small></button>
+        <button id="go-characters">Avatar <small>Escoge tu personaje</small></button>
+      </nav>
+    </details>
     <div class="brand">OSEOVERSE <small id="quiz-progress">0/3 · 0 pts</small></div>
-    <nav aria-label="Visitar zonas"><button id="go-conference">Auditorio</button><button id="go-basket">Canasta</button><button id="go-memory">Memoria</button><button id="go-target-game">Tiro VET</button><button id="go-stand">Preguntas</button><button id="go-objects">Objetos</button><button id="go-characters">Avatar</button></nav>
     <details id="menu">
       <summary aria-label="Abrir menú">☰ <span id="people-count">1</span></summary>
       <div id="menu-content">
@@ -72,6 +84,24 @@
     </details>
     <button id="room-status" data-state="waiting" aria-label="Ver estado y participantes de la sala">DERMAVR · conectando…</button>
   </header>
+  <div id="quick-controls" role="group" aria-label="Controles rápidos">
+    <button data-icon="mic" data-media-shortcut="mic" aria-label="Activar micrófono" aria-pressed="false" title="Activar micrófono"></button>
+    <button id="quick-ambience" data-icon="sound" aria-label="Silenciar ambiente" aria-pressed="true" title="Silenciar ambiente"></button>
+    <button data-icon="camera" data-media-shortcut="camera" aria-label="Activar cámara" aria-pressed="false" title="Activar cámara"></button>
+    <button data-icon="screen" data-media-shortcut="screen" aria-label="Compartir pantalla" aria-pressed="false" title="Compartir pantalla"></button>
+    <button data-icon="hand" data-media-shortcut="hand" aria-label="Pedir la palabra" aria-pressed="false" title="Pedir la palabra"></button>
+    <button id="quick-settings" data-icon="settings" aria-label="Abrir ajustes" aria-controls="menu" aria-expanded="false" title="Ajustes y VR"></button>
+    <button id="quick-help" data-icon="help" aria-label="Mostrar ayuda" aria-controls="quick-help-panel" aria-expanded="false" title="Ayuda"></button>
+  </div>
+  <section id="quick-help-panel" aria-label="Ayuda rápida" hidden>
+    <div class="conference-heading"><strong>Explora a tu ritmo</strong><button id="close-quick-help" aria-label="Cerrar ayuda">×</button></div>
+    <p><b>☰ Explorar, a la izquierda:</b> abre los destinos y elige un stand o juego.</p>
+    <p><b>Barra inferior:</b> micrófono, ambiente, cámara, pantalla, pedir la palabra, ajustes y ayuda. Rojo y tachado indica micro o cámara apagados; verde indica activado.</p>
+    <p><b>Para conversar:</b> entra al Auditorio y pulsa Unirme. Después puedes encender o apagar el micrófono y la cámara desde los iconos. Requiere que el organizador conecte el servicio de llamadas.</p>
+    <p><b>PC:</b> WASD para caminar; arrastra para mirar y haz clic para interactuar.</p>
+    <p><b>Celular:</b> usa el joystick, arrastra para mirar y toca los paneles.</p>
+    <p><b>Meta Quest:</b> entra a VR desde el menú de la derecha. Usa el gatillo para interactuar y los controles del auditorio para la llamada.</p>
+  </section>
   <div id="status" role="status" aria-live="polite">Cargando tus stands…</div>
   <output id="target-progress" class="sr-only" aria-live="off" aria-label="Progreso de Escudo VET"></output>
   <output id="basket-progress" class="sr-only" aria-live="off" aria-label="Progreso de Canasta NutriVet"></output>
@@ -81,6 +111,7 @@
   <section id="conference-panel" aria-label="Controles del auditorio" hidden>
     <div class="conference-heading"><strong>Auditorio · en directo</strong><button id="conference-close" aria-label="Ocultar controles de llamada">×</button></div>
     <p id="conference-status" role="status"></p>
+    <button id="conference-travel">Ir al auditorio</button>
     <div class="conference-buttons">
       <button data-conference="join">Unirme</button><button data-conference="mic">Activar micro</button>
       <button data-conference="camera">Activar cámara</button><button data-conference="screen">Compartir pantalla</button>
