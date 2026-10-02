@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-PT-1c59o.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-C8VmrEr7.css">
+  <script type="module" crossorigin src="./assets/index-B5jfEXp2.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BheS027s.css">
 </head>
 <body class="entry-required">
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
@@ -44,9 +44,9 @@
         <strong>Micrófono y realidad virtual</strong>
         <div class="settings-controls">
           <button id="conference-reopen">Micrófono y videollamada</button>
-          <button id="menu-go-conference">Ir al auditorio para hablar</button>
+          <button id="menu-go-conference">Ir al auditorio para presentaciones</button>
         </div>
-        <small>En el auditorio: pulsa Unirme y después Activar micro. La voz se comparte con quienes se unen a esa llamada.</small>
+        <small>Micrófono: habla por cercanía en cualquier stand. Megáfono: habla a toda la sala. Debe aparecer Voz conectada; si falta configurar el servicio, verás el motivo.</small>
         <div id="vr-controls"></div>
         <small id="vr-help">Comprobando si este navegador permite entrar a VR…</small>
         <hr />
@@ -86,18 +86,21 @@
   </header>
   <div id="quick-controls" role="group" aria-label="Controles rápidos">
     <button data-icon="mic" data-media-shortcut="mic" aria-label="Activar micrófono" aria-pressed="false" title="Activar micrófono"></button>
+    <button data-icon="megaphone" data-media-shortcut="megaphone" aria-label="Activar megáfono: hablar a toda la sala" aria-pressed="false" title="Megáfono"></button>
     <button id="quick-ambience" data-icon="sound" aria-label="Silenciar ambiente" aria-pressed="true" title="Silenciar ambiente"></button>
     <button data-icon="camera" data-media-shortcut="camera" aria-label="Activar cámara" aria-pressed="false" title="Activar cámara"></button>
     <button data-icon="screen" data-media-shortcut="screen" aria-label="Compartir pantalla" aria-pressed="false" title="Compartir pantalla"></button>
-    <button data-icon="hand" data-media-shortcut="hand" aria-label="Pedir la palabra" aria-pressed="false" title="Pedir la palabra"></button>
     <button id="quick-settings" data-icon="settings" aria-label="Abrir ajustes" aria-controls="menu" aria-expanded="false" title="Ajustes y VR"></button>
     <button id="quick-help" data-icon="help" aria-label="Mostrar ayuda" aria-controls="quick-help-panel" aria-expanded="false" title="Ayuda"></button>
   </div>
+  <button id="voice-status" aria-label="Estado de voz y ayuda" title="Comprobar la conexión de voz">Conectar voz</button>
+  <button id="leave-game" hidden>Salir del juego · vista protegida</button>
   <section id="quick-help-panel" aria-label="Ayuda rápida" hidden>
     <div class="conference-heading"><strong>Explora a tu ritmo</strong><button id="close-quick-help" aria-label="Cerrar ayuda">×</button></div>
     <p><b>☰ Explorar, a la izquierda:</b> abre los destinos y elige un stand o juego.</p>
-    <p><b>Barra inferior:</b> micrófono, ambiente, cámara, pantalla, pedir la palabra, ajustes y ayuda. Rojo y tachado indica micro o cámara apagados; verde indica activado.</p>
-    <p><b>Para conversar:</b> entra al Auditorio y pulsa Unirme. Después puedes encender o apagar el micrófono y la cámara desde los iconos. Requiere que el organizador conecte el servicio de llamadas.</p>
+    <p><b>Barra inferior:</b> micrófono, megáfono, ambiente, cámara, pantalla, ajustes y ayuda. Rojo y tachado indica micro o cámara apagados; verde indica activado.</p>
+    <p><b>Para conversar:</b> activa el micrófono y permite su uso. Cerca se oye más fuerte; la voz se desvanece hasta 14 metros. El megáfono se oye en toda esta sala. Al apagar el micro también se apaga el megáfono. Requiere conectar LiveKit en el servidor; el indicador muestra si la voz está disponible.</p>
+    <p><b>Juegos:</b> al iniciar te colocamos frente al panel. Los avatares que lo tapen se ocultan solo para ti durante la ronda; regresan al terminar o salir.</p>
     <p><b>PC:</b> WASD para caminar; arrastra para mirar y haz clic para interactuar.</p>
     <p><b>Celular:</b> usa el joystick, arrastra para mirar y toca los paneles.</p>
     <p><b>Meta Quest:</b> entra a VR desde el menú de la derecha. Usa el gatillo para interactuar y los controles del auditorio para la llamada.</p>
@@ -108,8 +111,8 @@
   <output id="memory-progress" class="sr-only" aria-live="off" aria-label="Progreso de Patas Gemelas"></output>
   <section id="welcome" role="status" aria-live="polite" hidden><small>BIENVENIDO A LA SALA</small><strong id="welcome-room"></strong><span>Explora · participa · comparte</span></section>
   <div id="reticle" aria-hidden="true">·</div>
-  <section id="conference-panel" aria-label="Controles del auditorio" hidden>
-    <div class="conference-heading"><strong>Auditorio · en directo</strong><button id="conference-close" aria-label="Ocultar controles de llamada">×</button></div>
+  <section id="conference-panel" aria-label="Voz y presentaciones" hidden>
+    <div class="conference-heading"><strong>Voz y presentaciones</strong><button id="conference-close" aria-label="Ocultar controles de llamada">×</button></div>
     <p id="conference-status" role="status"></p>
     <button id="conference-travel">Ir al auditorio</button>
     <div class="conference-buttons">
@@ -117,11 +120,13 @@
       <button data-conference="camera">Activar cámara</button><button data-conference="screen">Compartir pantalla</button>
       <button data-conference="hand">Pedir la palabra</button><button data-conference="audio">Activar sonido</button>
       <button data-conference="leave">Salir de la llamada</button>
+      <button data-conference="megaphone">Megáfono</button>
     </div>
     <ul id="conference-people" aria-label="Personas en la llamada"></ul>
     <button id="conference-enlarge">Ampliar presentación</button>
     <details><summary>Cómo participar</summary>
-      <p>Hasta 6 personas en esta prueba. Tú decides cuándo encender la cámara y el micrófono. Usa audífonos para evitar eco. Al salir del auditorio se corta la llamada.</p>
+      <p>Hasta 6 personas conectadas a voz en esta prueba. Entrar nunca enciende tu micrófono ni tu cámara. Puedes caminar entre stands sin cortar la voz. Al cambiar de sala o desconectar se apagan los medios. Usa audífonos para evitar eco.</p>
+      <p>Micrófono: volumen por distancia. Megáfono: toda la sala; al desactivarlo vuelves a voz cercana. En esta prueba todos pueden usarlo. Pedir la palabra está disponible aquí y en la consola del auditorio.</p>
       <p>Solo el presentador autorizado puede compartir pantalla desde un navegador compatible. En Quest puedes ver la presentación y usar los botones del espacio con el gatillo. El visor puede no ofrecer cámara.</p>
       <p>La llamada usa LiveKit. No se graba desde esta aplicación.</p>
       <button id="conference-copy-id">Copiar mi ID para ser presentador</button>
