@@ -1,0 +1,107 @@
+{
+  "license": "CC BY 4.0",
+  "author": "Diego Luján García",
+  "source": "https://sketchfab.com/3d-models/horse-skeleton-eaca504567604e879b8ab2cf2763025e",
+  "adaptation": "STL parts prepared for web from the printing adaptation by rowiac",
+  "parts": [
+    {
+      "id": "cranium",
+      "file": "cranium.stl",
+      "source": "HorSkel_Cranium.stl",
+      "vertices": 4200,
+      "size": [
+        24.32076358795166,
+        41.73692321777344,
+        42.848024097271264
+      ]
+    },
+    {
+      "id": "neck",
+      "file": "neck.stl",
+      "source": "HorSkel_Neck.stl",
+      "vertices": 4800,
+      "size": [
+        9.754447937011719,
+        40.787824630737305,
+        58.697113252666554
+      ]
+    },
+    {
+      "id": "ribcage",
+      "file": "ribcage.stl",
+      "source": "HorSkel_Ribcage v2.stl",
+      "vertices": 6500,
+      "size": [
+        48.36281204223633,
+        83.36665916442871,
+        61.099801543811736
+      ]
+    },
+    {
+      "id": "pelvis",
+      "file": "pelvis.stl",
+      "source": "HorSkel_Pelvis.stl",
+      "vertices": 4200,
+      "size": [
+        46.843971252441406,
+        69.96667861938477,
+        34.91896440141079
+      ]
+    },
+    {
+      "id": "left-front",
+      "file": "left-front.stl",
+      "source": "HorSkel_LF_Leg.stl",
+      "vertices": 3000,
+      "size": [
+        15.558996200561523,
+        37.412174224853516,
+        106.74954983557348
+      ]
+    },
+    {
+      "id": "right-front",
+      "file": "right-front.stl",
+      "source": "HorSkel_RF_Leg.stl",
+      "vertices": 3000,
+      "size": [
+        12.311545372009277,
+        27.530441284179688,
+        109.18982696533203
+      ]
+    },
+    {
+      "id": "left-rear",
+      "file": "left-rear.stl",
+      "source": "HorSkel_LR_Leg.stl",
+      "vertices": 3200,
+      "size": [
+        21.01729106903076,
+        31.90797710418701,
+        122.30075863841921
+      ]
+    },
+    {
+      "id": "right-rear",
+      "file": "right-rear.stl",
+      "source": "HorSkel_RR_Leg.stl",
+      "vertices": 3200,
+      "size": [
+        20.99619483947754,
+        42.29520225524902,
+        122.34633628099783
+      ]
+    },
+    {
+      "id": "tail",
+      "file": "tail.stl",
+      "source": "HorSkel_Tail.stl",
+      "vertices": 2600,
+      "size": [
+        3.32300865650177,
+        35.59948539733887,
+        46.64928821578201
+      ]
+    }
+  ]
+}
