@@ -1,0 +1,33 @@
+{
+  "file": "horse-muscles.glb",
+  "title": "Equine muscular reference reconstruction",
+  "service": "Higgsfield",
+  "model": "SAM 3D",
+  "jobId": "0d29548d-cdd1-4757-8357-c73dcf27f9bc",
+  "inputMediaId": "11224f99-ecae-4270-b635-db16dd9e9e67",
+  "status": "completed",
+  "createdAt": "2026-10-24",
+  "sourceImage": "../../media/equine/sisson-muscles.jpg",
+  "sourceImageProvenance": "../../media/equine/sisson-muscles-source.json",
+  "sourceImagePage": "https://commons.wikimedia.org/wiki/File:Ligaments_and_muscles_of_the_horse_BHL18507111.jpg",
+  "sourceImageCopyrightStatus": "Public domain historical illustration",
+  "outputRights": "Generated through the user's Higgsfield account under the service conditions applicable to the generation. No CC0 or other open-license designation is asserted for this generated output.",
+  "creditsConsumed": 1,
+  "creditBalanceBefore": 609.9,
+  "creditBalanceAfter": 608.9,
+  "purchaseMade": false,
+  "bytes": 1670504,
+  "sha256": "c8ac2dbb9722e7f50702d843a6b5e2ae1a43c2751d00c16c6fc4167b93c2790e",
+  "triangles": 9098,
+  "vertices": 6580,
+  "meshes": 1,
+  "materials": 1,
+  "rawPositionBounds": {
+    "min": [-0.16427895426750183, -0.36772269010543823, -0.49988940358161926],
+    "max": [0.16442756354808807, 0.37851065397262573, 0.4990564286708832],
+    "units": "Uncalibrated generated model units; not anatomical measurements"
+  },
+  "anatomicalSegmentation": false,
+  "caution": "Educational approximation reconstructed from one historical lateral image. Muscle appearance is baked into a single textured whole-horse mesh, not separate anatomical structures. Hidden surfaces, layers, insertions and muscle boundaries are not validated. The original 2D plate remains the reference for quiz answers.",
+  "deviceValidation": "Physical Meta Quest verification is not claimed."
+}
