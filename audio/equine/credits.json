@@ -1,0 +1,13 @@
+{
+  "horse-neigh.mp3": {
+    "title": "Wiehern.ogg",
+    "author": "Hü",
+    "source": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/d/db/Wiehern.ogg",
+    "mp3": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Wiehern.ogg/Wiehern.ogg.mp3",
+    "license": "Public domain (PD-self); released worldwide by the author",
+    "verified": "2026-10-24",
+    "changes": "No file edit. Runtime playback is quiet, spatially attenuated and slightly pitch-varied."
+  },
+  "other_sounds": "Original procedural synthesis: breeze, soft foliage/straw, distant birds, hoof impacts and a fallback neigh. No external paid audio service."
+}
