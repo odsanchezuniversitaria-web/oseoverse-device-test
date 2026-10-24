@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-DbqzpuXW.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-fpnzpfQV.css">
+  <script type="module" crossorigin src="./assets/index-BE3SkH9W.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DORaIZ8-.css">
 </head>
 <body class="entry-required">
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
@@ -171,10 +171,22 @@
       <button id="scale-down" aria-label="Reducir objeto">−</button>
       <button id="scale-up" aria-label="Aumentar objeto">+</button>
       <button id="rotate-object">Girar</button>
+      <button id="inspect-object">Examinar</button>
       <button id="reset-object">Devolver</button>
       <button id="release-object">Soltar</button>
     </div>
   </section>
+  <dialog id="object-inspector" aria-labelledby="inspector-title">
+    <header><div><small>EXPLORACIÓN 3D</small><h2 id="inspector-title">Examinar pieza</h2></div><button id="inspector-close" aria-label="Cerrar examinador">Cerrar ×</button></header>
+    <div id="inspector-stage" aria-label="Modelo 3D: arrastra para girar; rueda o pellizca para acercar"></div>
+    <p id="inspector-help">Arrastra para girar en cualquier dirección. Usa la rueda o dos dedos para acercar.</p>
+    <div class="inspector-actions" aria-label="Controles del modelo">
+      <button id="inspector-left" aria-label="Girar pieza a la izquierda">←</button><button id="inspector-right" aria-label="Girar pieza a la derecha">→</button>
+      <button id="inspector-up" aria-label="Ver pieza desde arriba">↑</button><button id="inspector-down" aria-label="Ver pieza desde abajo">↓</button>
+      <button id="inspector-out" aria-label="Alejar vista">−</button><button id="inspector-in" aria-label="Acercar vista">+</button><button id="inspector-reset">Ajustar vista</button>
+    </div>
+    <p class="inspector-note">Esta vista no cambia la pieza en la sala. Cierra para seguir jugando o devolverla.</p>
+  </dialog>
   <div id="mobile-ui">
     <div id="move-pad" aria-label="Joystick de movimiento"><div id="move-knob"></div></div>
     <button id="interact">Agarrar</button>
