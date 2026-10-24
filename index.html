@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-an8EgtQG.js"></script>
+  <script type="module" crossorigin src="./assets/index-EKhwXlUg.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-fpnzpfQV.css">
 </head>
 <body class="entry-required">
@@ -33,6 +33,10 @@
       <summary aria-label="Abrir destinos">☰ <span>Explorar</span></summary>
       <nav id="destinations-content" aria-label="Visitar zonas">
         <strong>¿A dónde quieres ir?</strong>
+        <button id="go-equinos">Campus Equino <small>Entrar a una escena dedicada a los caballos</small></button>
+        <button id="go-equine-quiz" hidden>Reto veterinario <small>Preguntas con explicación · 80 puntos</small></button>
+        <button id="go-equine-map" hidden>Mapa del caballo <small>Reconoce seis regiones · 60 puntos</small></button>
+        <button id="return-lobby" hidden>← Volver al lobby <small>Salir del campus equino</small></button>
         <button id="go-academy">Academia <small>Vista previa del catálogo de cursos</small></button>
         <button id="go-exhibitions">Exhibiciones <small>Stands y objetos interactivos</small></button>
         <button id="go-conference">Auditorio <small>Conversaciones y presentaciones</small></button>
@@ -120,6 +124,7 @@
   <output id="basket-progress" class="sr-only" aria-live="off" aria-label="Progreso de Canasta NutriVet"></output>
   <output id="pharma-progress" class="sr-only" aria-live="off" aria-label="Progreso de FarmaVet"></output>
   <output id="anatomy-progress" class="sr-only" aria-live="off" aria-label="Progreso de OsteoLab"></output>
+  <output id="equine-progress" class="sr-only" aria-live="polite" aria-label="Progreso del campus equino"></output>
   <output id="memory-progress" class="sr-only" aria-live="off" aria-label="Progreso de Patas Gemelas"></output>
   <section id="welcome" role="status" aria-live="polite" hidden><small>BIENVENIDO A LA SALA</small><strong id="welcome-room"></strong><span>Explora · participa · comparte</span></section>
   <div id="reticle" aria-hidden="true">·</div>

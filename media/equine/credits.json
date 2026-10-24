@@ -1,0 +1,10 @@
+{
+  "scene": "Campus Equino",
+  "created": "2026-10-24",
+  "assets": [
+    { "file": "horse-reference.png", "service": "Higgsfield", "model": "Recraft V4.1", "job": "39a48049-cad5-4308-802e-8b03522d7487" },
+    { "file": "../../models/equine/horse.glb", "service": "Higgsfield", "model": "SAM 3D", "job": "ae515219-b4e2-483f-8afd-aa71f964c7d4", "note": "Referencia exterior generada con IA; no es un atlas clínico." },
+    { "file": "../../models/equine/entry-arch.glb", "service": "Higgsfield 3D Jutsu", "project": "884d7378-ba06-40a6-a12a-2870b602c880", "revision": 1 }
+  ],
+  "skeleton": { "manifest": "../../models/anatomy/manifest.json", "author": "Diego Luján García", "adaptation": "rowiac", "license": "CC BY 4.0" }
+}
