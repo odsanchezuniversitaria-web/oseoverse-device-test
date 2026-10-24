@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-BE3SkH9W.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DORaIZ8-.css">
+  <script type="module" crossorigin src="./assets/index-CdtETDPt.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D8xEEiq_.css">
 </head>
 <body class="entry-required">
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
@@ -66,6 +66,7 @@
         <small>Micrófono: habla por cercanía en cualquier stand. Megáfono: habla a toda la sala. Debe aparecer Voz conectada; si falta configurar el servicio, verás el motivo.</small>
         <div id="vr-controls"></div>
         <small id="vr-help">Comprobando si este navegador permite entrar a VR…</small>
+        <div class="settings-controls"><button id="fullscreen-toggle" type="button" aria-pressed="false">Entrar a pantalla completa</button></div>
         <hr />
         <strong>Sala multijugador</strong>
         <div id="room-controls">
@@ -92,9 +93,9 @@
         <hr />
         <button id="go-lobby">Volver a recepción</button><button id="go-second">Stand Escudo VET</button>
         <button id="lock-pointer">Capturar ratón (PC)</button>
-        <p><b>PC:</b> WASD para moverte, arrastra para mirar. Clic para responder o tomar; E para tomar/soltar. R gira y la rueda cambia el tamaño.</p>
-        <p><b>Celular:</b> joystick para caminar, arrastra para mirar, toca el objeto. Usa +/− o pellizca con dos dedos para cambiar tamaño.</p>
-        <p><b>Quest:</b> joystick izquierdo para caminar. Gatillo para tomar/soltar o responder. Con un objeto, joystick derecho vertical cambia tamaño y horizontal gira. También puedes sujetarlo manteniendo el botón de agarre.</p>
+        <p><b>PC:</b> WASD para moverte; mantén Shift para correr y pulsa Espacio para saltar. También tienes los botones Correr y Saltar. Arrastra para mirar; clic o E para interactuar. R gira el objeto y la rueda cambia su tamaño.</p>
+        <p><b>Celular:</b> joystick izquierdo para caminar; arrastra en la zona libre para mirar. Activa Correr para avanzar más rápido con el joystick y pulsa Saltar. Interactuar apunta al centro; también puedes tocar directamente los paneles. Usa +/− o pellizca para cambiar el tamaño del objeto.</p>
+        <p><b>Quest:</b> joystick izquierdo para caminar; mantenlo presionado para correr. A del mando derecho salta. Gatillo para tomar/soltar o responder. Con un objeto, joystick derecho vertical cambia tamaño y horizontal gira. También puedes sujetarlo manteniendo el botón de agarre.</p>
         <small id="load-state">Cargando stands…</small>
         <small>Respuestas y récords guardados para este participante. Cada acierto suma una sola vez. Las rondas de juegos empiezan de nuevo al entrar.</small>
       </div>
@@ -107,6 +108,7 @@
     <button id="quick-ambience" data-icon="sound" aria-label="Silenciar ambiente" aria-pressed="true" title="Silenciar ambiente"></button>
     <button data-icon="camera" data-media-shortcut="camera" aria-label="Activar cámara" aria-pressed="false" title="Activar cámara"></button>
     <button data-icon="screen" data-media-shortcut="screen" aria-label="Compartir pantalla" aria-pressed="false" title="Compartir pantalla"></button>
+    <button id="quick-fullscreen" data-icon="fullscreen" aria-label="Entrar a pantalla completa" aria-pressed="false" title="Entrar a pantalla completa"></button>
     <button id="quick-settings" data-icon="settings" aria-label="Abrir ajustes" aria-controls="menu" aria-expanded="false" title="Ajustes y VR"></button>
     <button id="quick-help" data-icon="help" aria-label="Mostrar ayuda" aria-controls="quick-help-panel" aria-expanded="false" title="Ayuda"></button>
   </div>
@@ -115,13 +117,13 @@
   <section id="quick-help-panel" aria-label="Ayuda rápida" hidden>
     <div class="conference-heading"><strong>Explora a tu ritmo</strong><button id="close-quick-help" aria-label="Cerrar ayuda">×</button></div>
     <p><b>☰ Explorar, a la izquierda:</b> abre los destinos y elige un stand o juego.</p>
-    <p><b>Barra inferior:</b> micrófono, megáfono, ambiente, cámara, pantalla, ajustes y ayuda. Rojo y tachado indica micro o cámara apagados; verde indica activado.</p>
+    <p><b>Barra inferior:</b> micrófono, megáfono, ambiente, cámara, compartir pantalla, pantalla completa, ajustes y ayuda. Rojo y tachado indica micro o cámara apagados; verde indica activado. El botón de pantalla completa sirve para entrar y salir; en PC también puedes salir con Escape.</p>
     <p><b>Para conversar:</b> activa el micrófono y permite su uso. Cerca se oye más fuerte; la voz se desvanece hasta 14 metros. El megáfono se oye en toda esta sala. Al apagar el micro también se apaga el megáfono. Requiere conectar LiveKit en el servidor; el indicador muestra si la voz está disponible.</p>
     <p><b>Juegos:</b> al iniciar te colocamos frente al panel. Los avatares que lo tapen se ocultan solo para ti durante la ronda; regresan al terminar o salir.</p>
     <p><b>Canasta NutriVet:</b> en PC o celular, toca el balón, desliza hacia el aro y suelta; la dirección, velocidad y recorrido controlan el tiro. En VR, aprieta el gatillo sobre el balón, mueve la mano y suelta para lanzarlo.</p>
-    <p><b>PC:</b> WASD para caminar; arrastra para mirar y haz clic para interactuar.</p>
-    <p><b>Celular:</b> usa el joystick, arrastra para mirar y toca los paneles.</p>
-    <p><b>Meta Quest:</b> entra a VR desde el menú de la derecha. Usa el gatillo para interactuar y los controles del auditorio para la llamada.</p>
+    <p><b>PC:</b> WASD para caminar, Shift para correr y Espacio para saltar. Arrastra para mirar y haz clic para interactuar.</p>
+    <p><b>Celular:</b> camina con el joystick de la izquierda y mira arrastrando por la zona libre. A la derecha están Correr, Saltar e Interactuar. Correr cambia la velocidad del joystick; no avanza por sí solo.</p>
+    <p><b>Meta Quest:</b> entra a VR desde el menú de la derecha. Joystick izquierdo para moverte; mantenlo presionado para correr. A del mando derecho para saltar. El gatillo interactúa y el agarre sujeta objetos.</p>
   </section>
   <div id="status" role="status" aria-live="polite">Cargando tus stands…</div>
   <output id="target-progress" class="sr-only" aria-live="off" aria-label="Progreso de Escudo VET"></output>
@@ -189,8 +191,13 @@
   </dialog>
   <div id="mobile-ui">
     <div id="move-pad" aria-label="Joystick de movimiento"><div id="move-knob"></div></div>
-    <button id="interact">Agarrar</button>
+    <div id="movement-actions" role="group" aria-label="Movimiento e interacción">
+      <button id="sprint" type="button" aria-label="Activar carrera" aria-pressed="false" title="Correr · Shift en PC"><span aria-hidden="true">»</span><span>Correr</span></button>
+      <button id="jump" type="button" aria-label="Saltar" title="Saltar · Espacio en PC"><span aria-hidden="true">↑</span><span>Saltar</span></button>
+      <button id="interact" type="button">Interactuar</button>
+    </div>
   </div>
+  <output id="movement-status" class="sr-only" aria-live="off" aria-label="Estado de movimiento"></output>
 </body>
 </html>
 
