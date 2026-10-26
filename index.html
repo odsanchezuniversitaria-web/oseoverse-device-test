@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-Dj1_y3AU.js"></script>
+  <script type="module" crossorigin src="./assets/index-DV6rOZaN.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-C0Eu4_4c.css">
 </head>
 <body class="entry-required">
@@ -17,10 +17,12 @@
       <p>Tu nombre aparecerá junto a tu personaje.</p>
       <label for="entry-name">Tu nombre</label>
       <input id="entry-name" name="nickname" autocomplete="nickname" minlength="2" maxlength="18" required placeholder="Escribe tu nombre" autofocus />
+      <div id="entry-contact">
       <label for="entry-email">Correo (opcional)</label>
       <input id="entry-email" name="visit-email" type="email" autocomplete="email" maxlength="254" placeholder="Puedes dejarlo vacío" />
       <label class="visit-consent"><input id="entry-email-consent" type="checkbox" /> Autorizo guardar este correo con mi visita durante 30 días.</label>
-      <p class="visit-notice">El organizador podrá consultar tu nombre, sala, tipo de dispositivo y tiempo aproximado de visita durante 30 días. El correo es opcional, no se verifica y no crea una cuenta. No grabamos tu pantalla, cámara ni conversaciones para estas estadísticas.</p>
+      </div>
+      <p id="entry-visit-notice" class="visit-notice">El organizador podrá consultar tu nombre, sala, tipo de dispositivo y tiempo aproximado de visita durante 30 días. El correo es opcional, no se verifica y no crea una cuenta. No grabamos tu pantalla, cámara ni conversaciones para estas estadísticas.</p>
       <button id="entry-submit" type="submit">Entrar a la sala →</button>
       <button id="entry-account-open" class="entry-secondary" type="button">Iniciar sesión o crear cuenta</button>
       <p id="entry-message" role="status">Conservaremos tus respuestas y récords al volver desde este navegador.</p>
@@ -61,6 +63,7 @@
     <div class="brand">OSEOVERSE <small id="quiz-progress">0/3 · 0 pts</small></div>
     <details id="menu">
       <summary aria-label="Abrir menú">☰ <span id="people-count">1</span></summary>
+      <button id="open-account" type="button">Mi cuenta · iniciar o cerrar sesión</button>
       <div id="menu-content">
         <strong>Micrófono y realidad virtual</strong>
         <div class="settings-controls">
