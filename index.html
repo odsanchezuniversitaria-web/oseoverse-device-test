@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-BCu6SrOY.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-B0755Cgt.css">
+  <script type="module" crossorigin src="./assets/index-DyD8TogF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DDsdmYN1.css">
 </head>
 <body class="entry-required">
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
@@ -24,6 +24,7 @@
       </div>
       <p id="entry-visit-notice" class="visit-notice">El organizador podrá consultar tu nombre, sala, tipo de dispositivo y tiempo aproximado de visita durante 30 días. El correo es opcional, no se verifica y no crea una cuenta. No grabamos tu pantalla, cámara ni conversaciones para estas estadísticas.</p>
       <button id="entry-submit" type="submit">Entrar a la sala →</button>
+      <small class="entry-screen-note">Al entrar se intentará activar pantalla completa. En celular, usa el modo horizontal. Puedes salir con «Salir ⤢».</small>
       <button id="entry-account-open" class="entry-secondary" type="button">Iniciar sesión o crear cuenta</button>
       <p id="entry-message" role="status">Conservaremos tus respuestas y récords al volver desde este navegador.</p>
       <small>Una pestaña activa por navegador. No necesitas crear una cuenta.</small>
@@ -61,6 +62,7 @@
       </nav>
     </details>
     <div class="brand">OSEOVERSE <small id="quiz-progress">0/3 · 0 pts</small></div>
+    <button id="fullscreen-exit" type="button" aria-label="Salir de pantalla completa" hidden>Salir ⤢</button>
     <details id="menu">
       <summary aria-label="Abrir menú">☰ <span id="people-count">1</span></summary>
       <div id="menu-content">
@@ -115,13 +117,16 @@
   </header>
   <div id="quick-controls" role="group" aria-label="Controles rápidos">
     <button data-icon="mic" data-media-shortcut="mic" aria-label="Activar micrófono" aria-pressed="false" title="Activar micrófono"></button>
+    <button id="quick-fullscreen" data-icon="fullscreen" aria-label="Entrar a pantalla completa" aria-pressed="false" title="Entrar a pantalla completa"></button>
+    <button id="quick-more" data-icon="more" aria-label="Más controles" aria-expanded="false" aria-controls="quick-more-panel" title="Más controles"></button>
+    <div id="quick-more-panel" role="group" aria-label="Más controles de audio y ayuda">
     <button data-icon="megaphone" data-media-shortcut="megaphone" aria-label="Activar megáfono: hablar a toda la sala" aria-pressed="false" title="Megáfono"></button>
     <button id="quick-ambience" data-icon="sound" aria-label="Silenciar ambiente" aria-pressed="true" title="Silenciar ambiente"></button>
     <button data-icon="camera" data-media-shortcut="camera" aria-label="Activar cámara" aria-pressed="false" title="Activar cámara"></button>
     <button data-icon="screen" data-media-shortcut="screen" aria-label="Compartir pantalla" aria-pressed="false" title="Compartir pantalla"></button>
-    <button id="quick-fullscreen" data-icon="fullscreen" aria-label="Entrar a pantalla completa" aria-pressed="false" title="Entrar a pantalla completa"></button>
     <button id="quick-settings" data-icon="settings" aria-label="Abrir ajustes" aria-controls="menu" aria-expanded="false" title="Ajustes y VR"></button>
     <button id="quick-help" data-icon="help" aria-label="Mostrar ayuda" aria-controls="quick-help-panel" aria-expanded="false" title="Ayuda"></button>
+    </div>
   </div>
   <button id="voice-status" aria-label="Estado de voz y ayuda" title="Comprobar la conexión de voz">Conectar voz</button>
   <button id="leave-game" hidden>Salir del juego · vista protegida</button>
@@ -129,6 +134,7 @@
     <div class="conference-heading"><strong>Explora a tu ritmo</strong><button id="close-quick-help" aria-label="Cerrar ayuda">×</button></div>
     <p><b>☰ Explorar, a la izquierda:</b> abre los destinos y elige un stand o juego.</p>
     <p><b>Barra inferior:</b> micrófono, megáfono, ambiente, cámara, compartir pantalla, pantalla completa, ajustes y ayuda. Rojo y tachado indica micro o cámara apagados; verde indica activado. El botón de pantalla completa sirve para entrar y salir; en PC también puedes salir con Escape.</p>
+    <p><b>En celular:</b> pulsa los tres puntos de la barra inferior para abrir cámara, megáfono, sonido y otros controles. Al entrar intentamos activar pantalla completa horizontal; si el navegador no gira, gira el celular. «Salir ⤢» arriba permite volver a la ventana.</p>
     <p><b>Para conversar:</b> activa el micrófono y permite su uso. Cerca se oye más fuerte; la voz se desvanece hasta 14 metros. El megáfono se oye en toda esta sala. Al apagar el micro también se apaga el megáfono. Requiere conectar LiveKit en el servidor; el indicador muestra si la voz está disponible.</p>
     <p><b>Juegos:</b> al iniciar te colocamos frente al panel. Los avatares que lo tapen se ocultan solo para ti durante la ronda; regresan al terminar o salir.</p>
     <p><b>Canasta NutriVet:</b> en PC o celular, toca el balón, desliza hacia el aro y suelta; la dirección, velocidad y recorrido controlan el tiro. En VR, aprieta el gatillo sobre el balón, mueve la mano y suelta para lanzarlo.</p>
