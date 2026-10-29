@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-C0b5TQiQ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DIqIEyS2.css">
+  <script type="module" crossorigin src="./assets/index-BCu6SrOY.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B0755Cgt.css">
 </head>
 <body class="entry-required">
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
@@ -64,19 +64,20 @@
     <details id="menu">
       <summary aria-label="Abrir menú">☰ <span id="people-count">1</span></summary>
       <div id="menu-content">
-        <button id="open-account" type="button">Mi cuenta · iniciar o cerrar sesión</button>
-        <hr />
-        <strong>Micrófono y realidad virtual</strong>
+        <div class="menu-heading"><strong>Tu espacio</strong><button id="menu-close" type="button" aria-label="Cerrar menú">×</button></div>
+        <div id="menu-library" class="menu-shortcuts"><button id="open-account" type="button">◉ Mi cuenta</button></div>
+        <details class="menu-section"><summary>◉ Voz, cámara y pantalla</summary><div class="menu-section-body">
         <div class="settings-controls">
           <button id="conference-reopen">Micrófono y videollamada</button>
           <button id="menu-go-conference">Ir al auditorio para presentaciones</button>
         </div>
         <small>Micrófono: habla por cercanía en cualquier stand. Megáfono: habla a toda la sala. Debe aparecer Voz conectada; si falta configurar el servicio, verás el motivo.</small>
-        <div id="vr-controls"></div>
+        </div></details>
+        <details class="menu-section"><summary>◈ Realidad virtual y pantalla completa</summary><div class="menu-section-body"><div id="vr-controls"></div>
         <small id="vr-help">Comprobando si este navegador permite entrar a VR…</small>
         <div class="settings-controls"><button id="fullscreen-toggle" type="button" aria-pressed="false">Entrar a pantalla completa</button></div>
-        <hr />
-        <strong>Sala multijugador</strong>
+        </div></details>
+        <details class="menu-section" id="menu-room"><summary>♧ Sala y participantes</summary><div class="menu-section-body">
         <div id="room-controls">
           <input id="player-name" aria-label="Tu nombre" maxlength="18" placeholder="Tu nombre" autocomplete="nickname" />
           <input id="room-code" aria-label="Código de sala" maxlength="8" placeholder="Código de sala" autocomplete="off" />
@@ -89,16 +90,17 @@
         <button id="reconnect" hidden>Reconectar</button>
         <button id="copy-link" hidden>Copiar enlace</button>
         <small id="network-detail"></small>
-        <hr />
-        <strong>Mi progreso</strong>
+        </div></details>
+        <details class="menu-section"><summary>✓ Mi progreso</summary><div class="menu-section-body">
         <p id="saved-progress"></p>
         <small id="save-status" role="status"></small>
         <small id="participant-ref"></small>
-        <hr />
-        <strong>Ajustes</strong>
+        </div></details>
+        <details class="menu-section"><summary>⚙ Sonidos y comodidad</summary><div class="menu-section-body">
         <div class="settings-controls"><button id="ambient-toggle" aria-pressed="true">Sonido ambiente: activado</button><button id="game-sound-toggle" aria-pressed="true">Efectos de juegos: activados</button><button id="fall-toggle" aria-pressed="true">Caída al fallar: activada</button></div>
         <small>El sonido empieza al tocar la pantalla. En VR la caída mantiene la orientación de tu cabeza. Puedes desactivarla aquí antes de entrar.</small>
-        <hr />
+        </div></details>
+        <details class="menu-section"><summary>ⓘ Movimiento y ayuda</summary><div class="menu-section-body">
         <button id="go-lobby">Volver a recepción</button><button id="go-second">Stand Escudo VET</button>
         <button id="lock-pointer">Capturar ratón (PC)</button>
         <p><b>PC:</b> WASD o las flechas del teclado para moverte; mantén Shift para correr y pulsa Espacio para saltar. También tienes los botones Correr y Saltar. Arrastra para mirar; clic o E para interactuar. R gira el objeto y la rueda cambia su tamaño.</p>
@@ -106,6 +108,7 @@
         <p><b>Quest:</b> joystick izquierdo para caminar; mantenlo presionado para correr. A del mando derecho salta. Gatillo para tomar/soltar o responder. Con un objeto, joystick derecho vertical cambia tamaño y horizontal gira. También puedes sujetarlo manteniendo el botón de agarre.</p>
         <small id="load-state">Cargando stands…</small>
         <small>Respuestas y récords guardados para este participante. Cada acierto suma una sola vez. Las rondas de juegos empiezan de nuevo al entrar.</small>
+        </div></details>
       </div>
     </details>
     <button id="room-status" data-state="waiting" aria-label="Ver estado y participantes de la sala">DERMAVR · conectando…</button>
