@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#173747" />
+  <meta name="referrer" content="no-referrer" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com; connect-src 'self' https: wss:; img-src 'self' data: blob: https:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; frame-src https://accounts.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <title>Oseoverse · stands e interacción</title>
-  <script type="module" crossorigin src="./assets/index-B3XIUVPH.js"></script>
+  <script type="module" crossorigin src="./assets/index-TSnZiB6F.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-B12M7Zde.css">
 </head>
 <body class="entry-required">
@@ -71,7 +73,7 @@
         <div id="menu-library" class="menu-shortcuts"><button id="open-account" type="button">◉ Mi cuenta</button></div>
         <details class="menu-section"><summary>◉ Voz, cámara y pantalla</summary><div class="menu-section-body">
         <div class="settings-controls">
-          <button id="conference-reopen">Micrófono y videollamada</button>
+          <button id="conference-reopen">Micrófono y presentación</button>
           <button id="menu-go-conference">Ir al auditorio para presentaciones</button>
         </div>
         <small>Micrófono: habla por cercanía en cualquier stand. Megáfono: habla a toda la sala. Debe aparecer Voz conectada; si falta configurar el servicio, verás el motivo.</small>
@@ -123,7 +125,6 @@
     <div id="quick-more-panel" role="group" aria-label="Más controles de audio y ayuda">
     <button data-icon="megaphone" data-media-shortcut="megaphone" aria-label="Activar megáfono: hablar a toda la sala" aria-pressed="false" title="Megáfono"></button>
     <button id="quick-ambience" data-icon="sound" aria-label="Silenciar ambiente" aria-pressed="true" title="Silenciar ambiente"></button>
-    <button data-icon="camera" data-media-shortcut="camera" aria-label="Activar cámara" aria-pressed="false" title="Activar cámara"></button>
     <button data-icon="screen" data-media-shortcut="screen" aria-label="Compartir pantalla" aria-pressed="false" title="Compartir pantalla"></button>
     <button id="quick-settings" data-icon="settings" aria-label="Abrir ajustes" aria-controls="menu" aria-expanded="false" title="Ajustes y VR"></button>
     <button id="quick-help" data-icon="help" aria-label="Mostrar ayuda" aria-controls="quick-help-panel" aria-expanded="false" title="Ayuda"></button>
@@ -158,7 +159,7 @@
     <button id="conference-travel">Ir al auditorio</button>
     <div class="conference-buttons">
       <button data-conference="join">Unirme</button><button data-conference="mic">Activar micro</button>
-      <button data-conference="camera">Activar cámara</button><button data-conference="screen">Compartir pantalla</button>
+      <button data-conference="screen">Compartir pantalla</button>
       <button data-conference="hand">Pedir la palabra</button><button data-conference="audio">Activar sonido</button>
       <button data-conference="leave">Salir de la llamada</button>
       <button data-conference="megaphone">Megáfono</button>
