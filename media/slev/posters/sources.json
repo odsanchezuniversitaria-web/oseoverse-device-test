@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-11-12",
+  "purpose": "Referencias fotográficas reales de anatomía y endoscopia canina para los afiches del cubículo SLEV. No validan la geometría ni la física del simulador.",
+  "items": [
+    {
+      "id": "canine-digestive-tract",
+      "file": "canine-digestive-tract.jpg",
+      "title": "Tracto digestivo canino",
+      "subtitle": "Preparación anatómica fijada · Canis lupus familiaris",
+      "credit": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva",
+      "source": "https://commons.wikimedia.org/wiki/File:Dog_digestive_tract.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Dog_digestive_tract.jpg/960px-Dog_digestive_tract.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 960,
+      "height": 1434,
+      "changes": "Miniatura proporcionada por Wikimedia, sin recortes, etiquetas anatómicas nuevas ni alteración de color. La presentación del afiche añade título, marco y atribución.",
+      "bytes": 286188,
+      "sha256": "6f8f9b2350fbe33232ada1da2677ced3fb9c4e8f6639312d237621ec11a39491"
+    },
+    {
+      "id": "canine-stomach-inner",
+      "file": "canine-stomach-inner.jpg",
+      "title": "Estómago canino · vista interna",
+      "subtitle": "Preparación anatómica fijada · pliegues de la mucosa",
+      "credit": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva",
+      "source": "https://commons.wikimedia.org/wiki/File:Dog_stomach_(open,_inner_view).jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Dog_stomach_%28open%2C_inner_view%29.jpg/960px-Dog_stomach_%28open%2C_inner_view%29.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 960,
+      "height": 1434,
+      "changes": "Miniatura proporcionada por Wikimedia, sin recortes, etiquetas anatómicas nuevas ni alteración de color. La presentación del afiche añade título, marco y atribución.",
+      "bytes": 177654,
+      "sha256": "1f8530ddcaf970a3932ebf08aa757bd0f481712d81e8da7bd9e6824e37eb8627"
+    },
+    {
+      "id": "canine-capsule-endoscopy",
+      "file": "canine-capsule-endoscopy.webp",
+      "title": "Capsuloendoscopia gástrica canina",
+      "subtitle": "Imágenes reales de cinco perros · grupo sin administración de cuerpos extraños",
+      "credit": "Kim U-Y, Kim YJ, Lee JW, Kim M, Jang H y Jung D-I (2024), figura 4",
+      "source": "https://www.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2024.1440831/full",
+      "doi": "10.3389/fvets.2024.1440831",
+      "download": "https://www.frontiersin.org/files/Articles/1440831/xml-images/fvets-11-1440831-g004.webp",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "width": 1535,
+      "height": 1023,
+      "changes": "Figura completa sin recortes ni alteraciones. La presentación del afiche añade título, marco y atribución.",
+      "caution": "Esta figura procede de una cápsula endoscópica, no de un endoscopio flexible. Se muestra como referencia visual de la mucosa, no como demostración de la extracción con pinzas del simulador.",
+      "bytes": 317464,
+      "sha256": "9115bdf509b5d4a50fb4fb9df804e6fee8f195c7211b775f09f47ddac5040020"
+    }
+  ]
+}
