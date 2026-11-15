@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VETIC · entrar a la sala</title>
+<p>Abriendo VETIC… <a id="enter" href="../">Entrar</a></p>
+<script>const target=(function publicEntryTarget(href){
+  const source=new URL(href),target=new URL('../',source);
+  target.search=source.search;target.hash=source.hash;return target.href;
+})(location.href);document.querySelector('#enter').href=target;location.replace(target);</script>
+<noscript>Activa JavaScript para entrar al entorno 3D.</noscript></html>
