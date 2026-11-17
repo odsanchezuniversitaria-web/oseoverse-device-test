@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#173747" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com; connect-src 'self' blob: https: wss:; img-src 'self' data: blob: https:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; font-src 'self' data:; frame-src https://accounts.google.com https://player.vdocipher.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <title>Campus interactivo · Vetic</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="./media/brand/vetic-logo.jpg" />
+  <script type="module" crossorigin src="./assets/campus-b6PbTwvl.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="./assets/campus-Bu7tBrby.css">
+</head>
+<body class="entry-required">
+  <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
+    <form id="entry-form">
+      <div class="entry-mark" aria-hidden="true">✦</div>
+      <small>VETIC · EQUIPO VETERINARIO</small>
+      <h1 id="entry-title">¿Cómo te llamas?</h1>
+      <p>Tu nombre aparecerá junto a tu personaje.</p>
+      <label for="entry-name">Tu nombre</label>
+      <input id="entry-name" name="nickname" autocomplete="nickname" minlength="2" maxlength="18" required placeholder="Escribe tu nombre" autofocus />
+      <div id="entry-contact">
+      <label for="entry-email">Correo electrónico</label>
+      <input id="entry-email" name="visit-email" type="email" autocomplete="email" maxlength="254" placeholder="Escribe tu correo" required />
+      <label class="visit-consent"><input id="entry-email-consent" type="checkbox" required /> Autorizo guardar este correo con mi visita durante 30 días.</label>
+      </div>
+      <label class="visit-consent"><input id="entry-news-consent" type="checkbox" /> Autorizo recibir correos de actualización en educación (opcional).</label>
+      <p id="entry-visit-notice" class="visit-notice">El organizador podrá consultar tu nombre, correo, sala, dispositivo y tiempo aproximado de visita durante 30 días. El correo de invitado no se verifica ni crea una cuenta. No grabamos tu pantalla, cámara ni conversaciones para estas estadísticas.</p>
+      <button id="entry-submit" type="submit">Entrar a la sala →</button>
+      <small class="entry-screen-note">Al entrar se intentará activar pantalla completa. En celular, usa el modo horizontal. Puedes salir con «Salir ⤢».</small>
+      <button id="entry-account-open" class="entry-secondary" type="button">Ingresar con Google</button>
+      <p id="entry-message" role="status">Conservaremos tus respuestas y récords al volver desde este navegador.</p>
+      <small>Una pestaña activa por navegador. No necesitas crear una cuenta.</small>
+    </form>
+    <section id="entry-account" hidden aria-label="Cuenta VETIC">
+      <button id="entry-account-back" class="entry-secondary" type="button">← Volver y entrar como invitado</button>
+      <div id="entry-account-content"></div>
+    </section>
+  </section>
+  <div id="app"></div>
+  <header id="topbar">
+    <details id="destinations">
+      <summary aria-label="Abrir destinos">☰ <span>Explorar</span></summary>
+      <nav id="destinations-content" aria-label="Visitar zonas">
+        <strong>¿A dónde quieres ir?</strong>
+        <a href="./" style="color:inherit;padding:12px;display:block">← Portada de Vetic</a>
+        <button id="go-equinos">Sala · Campus Equino <small>Entrar a la sala dedicada a los caballos</small></button>
+        <button id="go-endoscopy">Cubículo SLEV · Endoscopia canina <small>Simulador de esófago y estómago · Lobby</small></button>
+        <button id="go-equine-quiz" hidden>Reto veterinario <small>Preguntas con explicación · 80 puntos</small></button>
+        <button id="go-equine-map" hidden>Mapa del caballo <small>Reconoce seis regiones · 60 puntos</small></button>
+        <button id="go-equine-muscles" hidden>MusculoLab <small>Anatomía muscular equina · 60 puntos</small></button>
+        <button id="go-equine-gait" hidden>Paso a paso <small>Aprende los apoyos del paso y el trote</small></button>
+        <button id="go-equine-care" hidden>Prepara el box <small>Elige los elementos seguros del establo</small></button>
+        <button id="go-equine-horses" hidden>Visitar los caballos <small>Observa los boxes y sus animales</small></button>
+        <button id="return-lobby" hidden>← Volver al lobby <small>Salir del campus equino</small></button>
+        <button id="go-academy">Academia <small>Vista previa del catálogo de cursos</small></button>
+        <button id="go-exhibitions">Cubículos y exhibiciones <small>Stands y objetos interactivos del lobby</small></button>
+        <button id="go-conference">Auditorio <small>Conversaciones y presentaciones</small></button>
+        <button id="go-basket">Canasta <small>Nutrición en juego</small></button>
+        <button id="go-pharma">FarmaVet <small>Clasifica el botiquín</small></button>
+        <button id="go-anatomy">OsteoLab <small>Huesos equinos: identifica y clasifica</small></button>
+        <button id="go-memory">Memoria <small>Encuentra las parejas</small></button>
+        <button id="go-target-game">Tiro VET <small>Protege a las mascotas</small></button>
+        <button id="go-stand">Preguntas <small>Aprende y suma puntos</small></button>
+        <button id="go-objects">Objetos <small>Toma, gira y cambia el tamaño</small></button>
+        <button id="go-characters">Avatar <small>Escoge tu personaje</small></button>
+      </nav>
+    </details>
+    <div class="brand">VETIC <small id="quiz-progress">0/3 · 0 pts</small></div>
+    <button id="fullscreen-exit" type="button" aria-label="Salir de pantalla completa" hidden>Salir ⤢</button>
+    <details id="menu">
+      <summary aria-label="Abrir menú">☰ <span id="people-count">1</span></summary>
+      <div id="menu-content">
+        <div class="menu-heading"><strong>Tu espacio</strong><button id="menu-close" type="button" aria-label="Cerrar menú">×</button></div>
+        <div id="menu-library" class="menu-shortcuts"><button id="open-account" type="button">◉ Mi cuenta</button></div>
+        <details class="menu-section"><summary>◉ Voz, cámara y pantalla</summary><div class="menu-section-body">
+        <div class="settings-controls">
+          <button id="conference-reopen">Micrófono y presentación</button>
+          <button id="menu-go-conference">Ir al auditorio para presentaciones</button>
+        </div>
+        <small>Micrófono: habla por cercanía en cualquier stand. Megáfono: habla a toda la sala. Debe aparecer Voz conectada; si falta configurar el servicio, verás el motivo.</small>
+        </div></details>
+        <details class="menu-section"><summary>◈ Realidad virtual y pantalla completa</summary><div class="menu-section-body"><div id="vr-controls"></div>
+        <small id="vr-help">Comprobando si este navegador permite entrar a VR…</small>
+        <div class="settings-controls"><button id="fullscreen-toggle" type="button" aria-pressed="false">Entrar a pantalla completa</button></div>
+        </div></details>
+        <details class="menu-section" id="menu-room"><summary>♧ Sala y participantes</summary><div class="menu-section-body">
+        <div id="room-controls">
+          <input id="player-name" aria-label="Tu nombre" maxlength="18" placeholder="Tu nombre" autocomplete="nickname" />
+          <input id="room-code" aria-label="Código de sala" maxlength="8" placeholder="Código de sala" autocomplete="off" />
+          <button id="join-room">Entrar</button><button id="create-room">Crear otra sala</button>
+        </div>
+        <p id="room-message">Entrando a la sala común…</p>
+        <p id="connection-state" role="status">Conectando…</p>
+        <button id="join-lobby">Ir a sala común DERMAVR</button>
+        <ul id="participant-list" aria-label="Participantes conectados"></ul>
+        <button id="reconnect" hidden>Reconectar</button>
+        <button id="copy-link" hidden>Copiar enlace</button>
+        <small id="network-detail"></small>
+        </div></details>
+        <details class="menu-section"><summary>✓ Mi progreso</summary><div class="menu-section-body">
+        <p id="saved-progress"></p>
+        <small id="save-status" role="status"></small>
+        <small id="participant-ref"></small>
+        </div></details>
+        <details class="menu-section"><summary>⚙ Sonidos y comodidad</summary><div class="menu-section-body">
+        <div class="settings-controls"><button id="ambient-toggle" aria-pressed="true">Sonido ambiente: activado</button><button id="game-sound-toggle" aria-pressed="true">Efectos de juegos: activados</button><button id="fall-toggle" aria-pressed="true">Caída al fallar: activada</button></div>
+        <small>El sonido empieza al tocar la pantalla. En VR la caída mantiene la orientación de tu cabeza. Puedes desactivarla aquí antes de entrar.</small>
+        </div></details>
+        <details class="menu-section"><summary>ⓘ Movimiento y ayuda</summary><div class="menu-section-body">
+        <button id="go-lobby">Volver a recepción</button><button id="go-second">Stand Escudo VET</button>
+        <button id="lock-pointer">Capturar ratón (PC)</button>
+        <p><b>PC:</b> WASD o las flechas del teclado para moverte; mantén Shift para correr y pulsa Espacio para saltar. También tienes los botones Correr y Saltar. Arrastra para mirar; clic o E para interactuar. R gira el objeto y la rueda cambia su tamaño.</p>
+        <p><b>Celular:</b> joystick izquierdo para caminar; arrastra en la zona libre para mirar. Activa Correr para avanzar más rápido con el joystick y pulsa Saltar. Interactuar apunta al centro; también puedes tocar directamente los paneles. Usa +/− o pellizca para cambiar el tamaño del objeto.</p>
+        <p><b>Quest:</b> joystick izquierdo para caminar; mantenlo presionado para correr. A del mando derecho salta. Gatillo para tomar/soltar o responder. Con un objeto, joystick derecho vertical cambia tamaño y horizontal gira. También puedes sujetarlo manteniendo el botón de agarre.</p>
+        <small id="load-state">Cargando stands…</small>
+        <small>Respuestas y récords guardados para este participante. Cada acierto suma una sola vez. Las rondas de juegos empiezan de nuevo al entrar.</small>
+        </div></details>
+      </div>
+    </details>
+    <button id="room-status" data-state="waiting" aria-label="Ver estado y participantes de la sala">DERMAVR · conectando…</button>
+  </header>
+  <div id="quick-controls" role="group" aria-label="Controles rápidos">
+    <button data-icon="mic" data-media-shortcut="mic" aria-label="Activar micrófono" aria-pressed="false" title="Activar micrófono"></button>
+    <button id="quick-fullscreen" data-icon="fullscreen" aria-label="Entrar a pantalla completa" aria-pressed="false" title="Entrar a pantalla completa"></button>
+    <button id="quick-more" data-icon="more" aria-label="Más controles" aria-expanded="false" aria-controls="quick-more-panel" title="Más controles"></button>
+    <div id="quick-more-panel" role="group" aria-label="Más controles de audio y ayuda">
+    <button data-icon="megaphone" data-media-shortcut="megaphone" aria-label="Activar megáfono: hablar a toda la sala" aria-pressed="false" title="Megáfono"></button>
+    <button id="quick-ambience" data-icon="sound" aria-label="Silenciar ambiente" aria-pressed="true" title="Silenciar ambiente"></button>
+    <button data-icon="screen" data-media-shortcut="screen" aria-label="Compartir pantalla" aria-pressed="false" title="Compartir pantalla"></button>
+    <button id="quick-settings" data-icon="settings" aria-label="Abrir ajustes" aria-controls="menu" aria-expanded="false" title="Ajustes y VR"></button>
+    <button id="quick-help" data-icon="help" aria-label="Mostrar ayuda" aria-controls="quick-help-panel" aria-expanded="false" title="Ayuda"></button>
+    </div>
+  </div>
+  <button id="voice-status" aria-label="Estado de voz y ayuda" title="Comprobar la conexión de voz">Conectar voz</button>
+  <button id="leave-game" hidden>Salir del juego · vista protegida</button>
+  <section id="quick-help-panel" aria-label="Ayuda rápida" hidden>
+    <div class="conference-heading"><strong>Explora a tu ritmo</strong><button id="close-quick-help" aria-label="Cerrar ayuda">×</button></div>
+    <p><b>☰ Explorar, a la izquierda:</b> abre los destinos y elige un stand o juego.</p>
+    <p><b>Barra inferior:</b> micrófono, megáfono, ambiente, cámara, compartir pantalla, pantalla completa, ajustes y ayuda. Rojo y tachado indica micro o cámara apagados; verde indica activado. El botón de pantalla completa sirve para entrar y salir; en PC también puedes salir con Escape.</p>
+    <p><b>En celular:</b> pulsa los tres puntos de la barra inferior para abrir cámara, megáfono, sonido y otros controles. Al entrar intentamos activar pantalla completa horizontal; si el navegador no gira, gira el celular. «Salir ⤢» arriba permite volver a la ventana.</p>
+    <p><b>Para conversar:</b> activa el micrófono y permite su uso. Cerca se oye más fuerte; la voz se desvanece hasta 14 metros. El megáfono se oye en toda esta sala. Al apagar el micro también se apaga el megáfono. Requiere conectar LiveKit en el servidor; el indicador muestra si la voz está disponible.</p>
+    <p><b>Juegos:</b> al iniciar te colocamos frente al panel. Los avatares que lo tapen se ocultan solo para ti durante la ronda; regresan al terminar o salir.</p>
+    <p><b>Canasta NutriVet:</b> en PC o celular, toca el balón, desliza hacia el aro y suelta; la dirección, velocidad y recorrido controlan el tiro. En VR, aprieta el gatillo sobre el balón, mueve la mano y suelta para lanzarlo.</p>
+    <p><b>PC:</b> WASD o las flechas del teclado para caminar, Shift para correr y Espacio para saltar. Arrastra para mirar y haz clic para interactuar.</p>
+    <p><b>Celular:</b> camina con el joystick de la izquierda y mira arrastrando por la zona libre. A la derecha están Correr, Saltar e Interactuar. Correr cambia la velocidad del joystick; no avanza por sí solo.</p>
+    <p><b>Meta Quest:</b> entra a VR desde el menú de la derecha. Joystick izquierdo para moverte; mantenlo presionado para correr. A del mando derecho para saltar. El gatillo interactúa y el agarre sujeta objetos.</p>
+  </section>
+  <div id="status" role="status" aria-live="polite">Cargando tus stands…</div>
+  <output id="target-progress" class="sr-only" aria-live="off" aria-label="Progreso de Escudo VET"></output>
+  <output id="basket-progress" class="sr-only" aria-live="off" aria-label="Progreso de Canasta NutriVet"></output>
+  <output id="pharma-progress" class="sr-only" aria-live="off" aria-label="Progreso de FarmaVet"></output>
+  <output id="anatomy-progress" class="sr-only" aria-live="off" aria-label="Progreso de OsteoLab"></output>
+  <output id="equine-progress" class="sr-only" aria-live="polite" aria-label="Progreso del campus equino"></output>
+  <output id="memory-progress" class="sr-only" aria-live="off" aria-label="Progreso de Patas Gemelas"></output>
+  <section id="welcome" role="status" aria-live="polite" hidden><small>BIENVENIDO A LA SALA</small><strong id="welcome-room"></strong><span>Explora · participa · comparte</span></section>
+  <div id="reticle" aria-hidden="true">·</div>
+  <section id="conference-panel" aria-label="Voz y presentaciones" hidden>
+    <div class="conference-heading"><strong>Voz y presentaciones</strong><button id="conference-close" aria-label="Ocultar controles de llamada">×</button></div>
+    <p id="conference-status" role="status"></p>
+    <button id="conference-travel">Ir al auditorio</button>
+    <div class="conference-buttons">
+      <button data-conference="join">Unirme</button><button data-conference="mic">Activar micro</button>
+      <button data-conference="screen">Compartir pantalla</button>
+      <button data-conference="hand">Pedir la palabra</button><button data-conference="audio">Activar sonido</button>
+      <button data-conference="leave">Salir de la llamada</button>
+      <button data-conference="megaphone">Megáfono</button>
+    </div>
+    <ul id="conference-people" aria-label="Personas en la llamada"></ul>
+    <button id="conference-enlarge">Ampliar presentación</button>
+    <details><summary>Cómo participar</summary>
+      <p>Hasta 6 personas conectadas a voz en esta prueba. Entrar nunca enciende tu micrófono ni tu cámara. Puedes caminar entre stands sin cortar la voz. Al cambiar de sala o desconectar se apagan los medios. Usa audífonos para evitar eco.</p>
+      <p>Micrófono: volumen por distancia. Megáfono: toda la sala; al desactivarlo vuelves a voz cercana. En esta prueba todos pueden usarlo. Pedir la palabra está disponible aquí y en la consola del auditorio.</p>
+      <p>Solo el presentador autorizado puede compartir pantalla desde un navegador compatible. En Quest puedes ver la presentación y usar los botones del espacio con el gatillo. El visor puede no ofrecer cámara.</p>
+      <p>La llamada usa LiveKit. No se graba desde esta aplicación.</p>
+      <button id="conference-copy-id">Copiar mi ID para ser presentador</button>
+    </details>
+  </section>
+  <section id="presentation-view" role="dialog" aria-modal="true" aria-label="Presentación ampliada" hidden>
+    <header><strong>Presentación en directo</strong><button id="presentation-close">Cerrar presentación</button></header>
+    <p id="presentation-empty">La presentación aparecerá aquí cuando el expositor comparta su pantalla o cámara.</p>
+    <video id="presentation-video" autoplay playsinline muted hidden></video>
+  </section>
+  <div id="fall-overlay" aria-hidden="true" hidden></div>
+  <section id="character-picker" aria-label="Escoge tu personaje" hidden>
+    <button id="close-characters" aria-label="Cerrar selector de personajes">×</button>
+    <strong>Escoge tu personaje</strong><p>Bata blanca · equipo veterinario</p>
+    <div><button data-character="cat" aria-pressed="false">Gato veterinario</button><button data-character="dog" aria-pressed="false">Perro veterinario</button></div>
+    <small>Tu elección: <span id="selected-character"></span></small>
+  </section>
+  <section id="object-tools" aria-label="Objeto en la mano" hidden>
+    <div><b id="held-name"></b> <output id="held-scale">1.00×</output></div>
+    <div class="tool-buttons">
+      <button id="scale-down" aria-label="Reducir objeto">−</button>
+      <button id="scale-up" aria-label="Aumentar objeto">+</button>
+      <button id="rotate-object">Girar</button>
+      <button id="inspect-object">Examinar</button>
+      <button id="reset-object">Devolver</button>
+      <button id="release-object">Soltar</button>
+    </div>
+  </section>
+  <dialog id="object-inspector" aria-labelledby="inspector-title">
+    <header><div><small>EXPLORACIÓN 3D</small><h2 id="inspector-title">Examinar pieza</h2></div><button id="inspector-close" aria-label="Cerrar examinador">Cerrar ×</button></header>
+    <div id="inspector-stage" aria-label="Modelo 3D: arrastra para girar; rueda o pellizca para acercar"></div>
+    <p id="inspector-help">Arrastra para girar en cualquier dirección. Usa la rueda o dos dedos para acercar.</p>
+    <div class="inspector-actions" aria-label="Controles del modelo">
+      <button id="inspector-left" aria-label="Girar pieza a la izquierda">←</button><button id="inspector-right" aria-label="Girar pieza a la derecha">→</button>
+      <button id="inspector-up" aria-label="Ver pieza desde arriba">↑</button><button id="inspector-down" aria-label="Ver pieza desde abajo">↓</button>
+      <button id="inspector-out" aria-label="Alejar vista">−</button><button id="inspector-in" aria-label="Acercar vista">+</button><button id="inspector-reset">Ajustar vista</button>
+    </div>
+    <p class="inspector-note">Esta vista no cambia la pieza en la sala. Cierra para seguir jugando o devolverla.</p>
+  </dialog>
+  <div id="mobile-ui">
+    <div id="move-pad" aria-label="Joystick de movimiento"><div id="move-knob"></div></div>
+    <div id="movement-actions" role="group" aria-label="Movimiento e interacción">
+      <button id="sprint" type="button" aria-label="Activar carrera" aria-pressed="false" title="Correr · Shift en PC"><span aria-hidden="true">»</span><span>Correr</span></button>
+      <button id="jump" type="button" aria-label="Saltar" title="Saltar · Espacio en PC"><span aria-hidden="true">↑</span><span>Saltar</span></button>
+      <button id="interact" type="button">Interactuar</button>
+    </div>
+  </div>
+  <output id="movement-status" class="sr-only" aria-live="off" aria-label="Estado de movimiento"></output>
+</body>
+</html>
+
