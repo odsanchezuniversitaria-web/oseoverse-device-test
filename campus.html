@@ -9,9 +9,9 @@
   <title>Campus interactivo · Vetic</title>
   <meta name="robots" content="noindex" />
   <link rel="icon" href="./media/brand/vetic-logo.jpg" />
-  <script type="module" crossorigin src="./assets/campus-rGkOVuoS.js"></script>
+  <script type="module" crossorigin src="./assets/campus-D6uLAxUh.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="./assets/campus-Bl1JocNL.css">
+  <link rel="stylesheet" crossorigin href="./assets/campus-B-eEt4FS.css">
 </head>
 <body class="entry-required">
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
@@ -56,7 +56,8 @@
         <button id="go-equine-care" hidden>Prepara el box <small>Elige los elementos seguros del establo</small></button>
         <button id="go-equine-horses" hidden>Visitar los caballos <small>Observa los boxes y sus animales</small></button>
         <button id="go-pharma-campus">Farmacología veterinaria <small>Entrar al laboratorio de aprendizaje</small></button>
-        <button id="go-dental-tooth" hidden>Diente en corte <small>Explora el modelo y reconoce sus tejidos</small></button>
+        <button id="go-dental-tooth" hidden>Colmillo maxilar <small>Compara la superficie con el corte longitudinal</small></button>
+        <button id="go-dental-tools" hidden>Instrumental odontológico <small>Reconoce los instrumentos y su función</small></button>
         <button id="go-dental-anatomy" hidden>Anatomía dental <small>Identifica las estructuras del diente</small></button>
         <button id="go-dental-prevention" hidden>Prevención oral <small>Elige cómo cuidar la salud oral</small></button>
         <button id="go-dental-clinical" hidden>Clínica dental <small>Practica con decisiones de consulta</small></button>
@@ -67,8 +68,11 @@
         <button id="go-pharma-safety" hidden>Botiquín seguro <small>Decisiones responsables · 60 puntos</small></button>
         <button id="go-pharma-molecules" hidden>Explorar moléculas 3D <small>Tomar, girar, ampliar y examinar</small></button>
         <button id="go-pharma-scan" hidden>Escáner molecular <small>Busca el modelo, llévalo y escanéalo</small></button>
+        <button id="go-pharma-scope1" hidden>Microscopía · estación 1 <small>Observa y enfoca las preparaciones</small></button>
+        <button id="go-pharma-scope2" hidden>Microscopía · estación 2 <small>Compara objetivos y detalles</small></button>
+        <button id="go-pharma-spectrum" hidden>Telescopio del espectrómetro <small>Alinea y mide líneas de referencia</small></button>
         <a id="pharma-references" href="./farmacologia-referencias.html" target="_blank" rel="noopener noreferrer" hidden>Referencias de Farmacología ↗</a>
-        <a id="dental-references" href="https://avdc.org/avdc-nomenclature/" target="_blank" rel="noopener noreferrer" hidden>Anatomía y nomenclatura dental · AVDC ↗</a>
+        <a id="dental-references" href="./odontologia-referencias.html" target="_blank" rel="noopener noreferrer" hidden>Dentición canina y fuentes de estudio ↗</a>
         <button id="return-lobby" hidden>← Volver al lobby <small>Salir del campus equino</small></button>
         <button id="go-academy">Academia <small>Vista previa del catálogo de cursos</small></button>
         <button id="go-exhibitions">Cubículos y exhibiciones <small>Stands y objetos interactivos del lobby</small></button>
@@ -158,6 +162,7 @@
     <header><h2 id="study-title"></h2><button type="button" id="close-study-reader" aria-label="Cerrar la lectura y volver al panel 3D">Volver al 3D</button></header>
     <p id="study-detail"></p>
     <h3 id="study-question" tabindex="-1"></h3>
+    <img id="study-image" alt="" hidden>
     <p id="study-feedback" role="status"></p>
     <div id="study-choices"></div>
   </dialog>
