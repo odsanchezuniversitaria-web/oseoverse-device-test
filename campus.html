@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scene-loading">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -9,11 +9,42 @@
   <title>Campus interactivo · Vetic</title>
   <meta name="robots" content="noindex" />
   <link rel="icon" href="./media/brand/vetic-logo.jpg" />
-  <script type="module" crossorigin src="./assets/campus-B1YrncH-.js"></script>
+  <style>
+    html.scene-loading { background: #09292b }
+    html.scene-loading body > :not(#scene-transition):not(script) { visibility: hidden !important; pointer-events: none !important }
+    #scene-transition:not([open]) { display: none }
+    #scene-transition[open] { position: fixed; inset: 0; z-index: 2147483647; display: grid; place-items: center; box-sizing: border-box; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; border: 0; padding: max(20px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left)); overflow: auto; color: #f0f8f4; background: radial-gradient(ellipse at 50% 22%, #174343, #09292b 65%); text-align: center; font: 1rem/1.5 system-ui, sans-serif }
+    #scene-transition::backdrop { background: #09292b }
+    #scene-transition .transition-card { width: min(100%, 32rem); margin: auto }
+    #scene-transition .transition-brand { font-weight: 750; font-size: .82rem; letter-spacing: .22em; color: #a4e4ca }
+    #transition-title { margin: .65rem auto 1.2rem; font-size: clamp(1.5rem, 5vw, 2.55rem); font-weight: 600; line-height: 1.18; letter-spacing: -.035em; text-wrap: balance; outline: none }
+    .transition-track { width: 7rem; height: 3px; margin: auto; background: #35615d; border-radius: 4px; overflow: hidden }
+    .transition-track::after { content: ''; display: block; width: 45%; height: 100%; background: #a0f3d1; border-radius: inherit; animation: vetic-travel 1.55s ease-in-out infinite alternate }
+    @keyframes vetic-travel { to { transform: translateX(122%) } }
+    @media (prefers-reduced-motion: reduce) { .transition-track::after { width: 100%; animation: none } }
+    #transition-detail { margin: .9rem auto 0; max-width: 31rem; color: #d0e1da }
+    #transition-detail:empty, #scene-transition[data-error] .transition-track { display: none }
+    #scene-transition .transition-retry { display: inline-block; padding: .55rem 1rem; margin-top: 1rem; border: 1px solid #81ada2; border-radius: .55rem; color: #edf9f2; text-decoration: none; visibility: hidden; animation: vetic-show-retry 0s 16s forwards }
+    #scene-transition[data-error] .transition-retry { visibility: visible; animation: none }
+    #scene-transition .transition-retry:focus-visible { outline: 2px solid #a0f3d1; outline-offset: 4px }
+    @keyframes vetic-show-retry { to { visibility: visible } }
+  </style>
+  <script type="module" crossorigin src="./assets/campus-BKfbl-ra.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="./assets/campus-4y_U2Xts.css">
+  <link rel="stylesheet" crossorigin href="./assets/campus-BenIHtgU.css">
 </head>
 <body class="entry-required">
+  <dialog id="scene-transition" open aria-modal="true" aria-labelledby="transition-title" aria-describedby="transition-detail">
+    <div class="transition-card">
+      <span class="transition-brand">VETIC</span>
+      <h2 id="transition-title" tabindex="-1" aria-live="polite">Cargando el campus</h2>
+      <div class="transition-track" aria-hidden="true"></div>
+      <p id="transition-detail" role="status"></p>
+      <noscript>Activa JavaScript en tu navegador para abrir el campus.</noscript>
+      <a class="transition-retry" href="">Volver a cargar</a>
+    </div>
+  </dialog>
+  <script src="./campus-transition.js"></script>
   <section id="entry-gate" role="dialog" aria-modal="true" aria-labelledby="entry-title">
     <form id="entry-form">
       <div class="entry-mark" aria-hidden="true">✦</div>
@@ -21,7 +52,7 @@
       <h1 id="entry-title">¿Cómo te llamas?</h1>
       <p>Tu nombre aparecerá junto a tu personaje.</p>
       <label for="entry-name">Tu nombre</label>
-      <input id="entry-name" name="nickname" autocomplete="nickname" minlength="2" maxlength="18" required placeholder="Escribe tu nombre" autofocus />
+      <input id="entry-name" name="nickname" autocomplete="nickname" minlength="2" maxlength="18" required placeholder="Escribe tu nombre" />
       <div id="entry-contact">
       <label for="entry-email">Correo electrónico</label>
       <input id="entry-email" name="visit-email" type="email" autocomplete="email" maxlength="254" placeholder="Escribe tu correo" required />
