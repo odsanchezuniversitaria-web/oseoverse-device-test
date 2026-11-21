@@ -29,9 +29,9 @@
     #scene-transition .transition-retry:focus-visible { outline: 2px solid #a0f3d1; outline-offset: 4px }
     @keyframes vetic-show-retry { to { visibility: visible } }
   </style>
-  <script type="module" crossorigin src="./assets/campus-CR76Z8Wo.js"></script>
+  <script type="module" crossorigin src="./assets/campus-C2yZPdYW.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="./assets/campus-k7psTnKU.css">
+  <link rel="stylesheet" crossorigin href="./assets/campus-Bca_Z27-.css">
 </head>
 <body class="entry-required">
   <dialog id="scene-transition" open aria-modal="true" aria-labelledby="transition-title" aria-describedby="transition-detail">
@@ -62,7 +62,10 @@
       <p id="entry-visit-notice" class="visit-notice">El organizador podrá consultar tu nombre, correo, sala, dispositivo y tiempo aproximado de visita durante 30 días. El correo de invitado no se verifica ni crea una cuenta. No grabamos tu pantalla, cámara ni conversaciones para estas estadísticas.</p>
       <button id="entry-submit" type="submit">Entrar a la sala →</button>
       <small class="entry-screen-note">Al entrar se intentará activar pantalla completa. En celular, usa el modo horizontal. Puedes salir con «Salir ⤢».</small>
-      <button id="entry-account-open" class="entry-secondary" type="button">Ingresar con Google</button>
+      <div class="entry-account-actions">
+        <button id="entry-account-open" class="entry-secondary" type="button">Ingresar con Google</button>
+        <button id="entry-microsoft-open" class="entry-secondary" type="button" hidden>Ingresar con Microsoft</button>
+      </div>
       <p id="entry-message" role="status">Conservaremos tus respuestas y récords al volver desde este navegador.</p>
       <small>Una pestaña activa por navegador. No necesitas crear una cuenta.</small>
     </form>
