@@ -29,9 +29,9 @@
     #scene-transition .transition-retry:focus-visible { outline: 2px solid #a0f3d1; outline-offset: 4px }
     @keyframes vetic-show-retry { to { visibility: visible } }
   </style>
-  <script type="module" crossorigin src="./assets/campus-CK6m3Qtc.js"></script>
+  <script type="module" crossorigin src="./assets/campus-Cd4SMv-3.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="./assets/campus-BQmw7O4x.css">
+  <link rel="stylesheet" crossorigin href="./assets/campus-DuEpbtfT.css">
 </head>
 <body class="entry-required">
   <dialog id="scene-transition" open aria-modal="true" aria-labelledby="transition-title" aria-describedby="transition-detail">
@@ -57,17 +57,17 @@
       <label for="entry-email">Correo electrónico</label>
       <input id="entry-email" name="visit-email" type="email" autocomplete="email" maxlength="254" placeholder="Escribe tu correo" required />
       <div id="entry-pharmacology" hidden>
-        <p id="entry-pharmacology-hint" class="visit-notice">Usa tu correo de Outlook o Hotmail con Google para abrir las clases que tienes asignadas.</p>
+        <p id="entry-pharmacology-hint" class="visit-notice">Usa el mismo correo de Outlook o Hotmail que indicaste en tu matrícula.</p>
         <button id="entry-pharmacology-open" class="entry-secondary" type="button" aria-describedby="entry-pharmacology-hint">Ver clases de Farmacología</button>
       </div>
       <label class="visit-consent"><input id="entry-email-consent" type="checkbox" required /> Autorizo guardar este correo con mi visita durante 30 días.</label>
       </div>
       <label class="visit-consent"><input id="entry-news-consent" type="checkbox" /> Autorizo recibir correos de actualización en educación (opcional).</label>
       <p id="entry-visit-notice" class="visit-notice">El organizador podrá consultar tu nombre, correo, sala, dispositivo y tiempo aproximado de visita durante 30 días. El correo de invitado no se verifica ni crea una cuenta. No grabamos tu pantalla, cámara ni conversaciones para estas estadísticas.</p>
-      <button id="entry-submit" type="submit">Entrar a la sala →</button>
+      <button id="entry-submit" type="submit">Entrar como invitado →</button>
       <small class="entry-screen-note">Al entrar se intentará activar pantalla completa. En celular, usa el modo horizontal. Puedes salir con «Salir ⤢».</small>
       <div class="entry-account-actions">
-        <button id="entry-account-open" class="entry-secondary" type="button">Ingresar con Google</button>
+        <button id="entry-account-open" class="entry-secondary" type="button">Iniciar sesión</button>
         <button id="entry-microsoft-open" class="entry-secondary" type="button" hidden>Ingresar con Microsoft</button>
       </div>
       <p id="entry-message" role="status">Conservaremos tus respuestas y récords al volver desde este navegador.</p>
@@ -76,7 +76,7 @@
     <section id="entry-account" hidden aria-label="Cuenta VETIC">
       <button id="entry-account-back" class="entry-secondary" type="button">← Volver y entrar como invitado</button>
       <div id="entry-pharmacology-account" hidden>
-        <p>Verifica con Google el correo <strong id="entry-pharmacology-address"></strong>. Si aún necesitas una cuenta de Google, <a href="https://support.google.com/accounts/answer/27441?hl=es-419" target="_blank" rel="noopener noreferrer">puedes crearla con ese mismo correo</a>.</p>
+        <p>Inicia sesión con una cuenta verificada que use <strong id="entry-pharmacology-address"></strong>. Si prefieres Google, <a href="https://support.google.com/accounts/answer/27441?hl=es-419" target="_blank" rel="noopener noreferrer">puedes crear una cuenta de Google con ese mismo correo</a>.</p>
         <p id="entry-pharmacology-status" role="status"></p>
       </div>
       <div id="entry-account-content"></div>
