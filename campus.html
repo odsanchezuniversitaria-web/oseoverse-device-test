@@ -29,9 +29,9 @@
     #scene-transition .transition-retry:focus-visible { outline: 2px solid #a0f3d1; outline-offset: 4px }
     @keyframes vetic-show-retry { to { visibility: visible } }
   </style>
-  <script type="module" crossorigin src="./assets/campus-C2yZPdYW.js"></script>
+  <script type="module" crossorigin src="./assets/campus-CK6m3Qtc.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="stylesheet" crossorigin href="./assets/campus-Bca_Z27-.css">
+  <link rel="stylesheet" crossorigin href="./assets/campus-BQmw7O4x.css">
 </head>
 <body class="entry-required">
   <dialog id="scene-transition" open aria-modal="true" aria-labelledby="transition-title" aria-describedby="transition-detail">
@@ -56,6 +56,10 @@
       <div id="entry-contact">
       <label for="entry-email">Correo electrónico</label>
       <input id="entry-email" name="visit-email" type="email" autocomplete="email" maxlength="254" placeholder="Escribe tu correo" required />
+      <div id="entry-pharmacology" hidden>
+        <p id="entry-pharmacology-hint" class="visit-notice">Usa tu correo de Outlook o Hotmail con Google para abrir las clases que tienes asignadas.</p>
+        <button id="entry-pharmacology-open" class="entry-secondary" type="button" aria-describedby="entry-pharmacology-hint">Ver clases de Farmacología</button>
+      </div>
       <label class="visit-consent"><input id="entry-email-consent" type="checkbox" required /> Autorizo guardar este correo con mi visita durante 30 días.</label>
       </div>
       <label class="visit-consent"><input id="entry-news-consent" type="checkbox" /> Autorizo recibir correos de actualización en educación (opcional).</label>
@@ -71,6 +75,10 @@
     </form>
     <section id="entry-account" hidden aria-label="Cuenta VETIC">
       <button id="entry-account-back" class="entry-secondary" type="button">← Volver y entrar como invitado</button>
+      <div id="entry-pharmacology-account" hidden>
+        <p>Verifica con Google el correo <strong id="entry-pharmacology-address"></strong>. Si aún necesitas una cuenta de Google, <a href="https://support.google.com/accounts/answer/27441?hl=es-419" target="_blank" rel="noopener noreferrer">puedes crearla con ese mismo correo</a>.</p>
+        <p id="entry-pharmacology-status" role="status"></p>
+      </div>
       <div id="entry-account-content"></div>
     </section>
   </section>
